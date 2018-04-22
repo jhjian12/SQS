@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>問卷頁面</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../javascript/questionnairewrite.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/radio.css">
+</head>
+<body background="../img/QBG.jpg">
+	<h3 class="w3-panel w3-leftbar w3-sand w3-xxlarge w3-serif"><span style="font-size:150px;line-height:0.6em;opacity:0.2">*</span>
+		歡迎蒞臨<span id="shopname"></span>用餐，為了提升餐廳整體的服務品質，請您撥冗填寫下列問題，讓我們可以為您未來的用餐品質把關。謝謝您!</h3>
+<form id="form">
+	<table id="question" border="1" class="table table-striped">
+		<tr>
+			<td colspan="2"></td>
+			<td colspan="5"><center>期望分數</center></td>
+			<td colspan="5" bgcolor="yellow"><center>感知分數</center></td>
+		</tr>
+		<tr>
+			<td>題號</td>
+			<td>問題</td>
+			<td>非常不滿意</td>
+			<td>不滿意</td>
+			<td>無意見</td>
+			<td>滿意</td>
+			<td>非常滿意</td>
+			<td>非常不滿意</td>
+			<td>不滿意</td>
+			<td>無意見</td>
+			<td>滿意</td>
+			<td>非常滿意</td>
+		</tr>
+		<tr>
+			<td align='center' valign="middle"><input type="radio"></td>
+			<td>問題</td>
+			<td>非常不滿意</td>
+			<td>不滿意</td>
+			<td>無意見</td>
+			<td>滿意</td>
+			<td>非常滿意</td>
+			<td>非常不滿意</td>
+			<td>不滿意</td>
+			<td>無意見</td>
+			<td>滿意</td>
+			<td>非常滿意</td>
+		</tr>
+	</table>
+	<div class="panel panel-primary">
+      <div class="panel-heading">其他意見</div>
+      <div class="panel-body"><textarea class="form-control" rows="5" style="height: 80px;width:500px" name="other_reply"></textarea></div>
+    </div>
+	<br>
+	<div class="panel panel-info">
+		<div class="panel-heading">基本資料</div>
+		<div class="panel-body">
+				<div class="well">
+	<p class="alert alert-success" style="font-size: 20px;">您的性別是</p>
+	<input type="radio" name="sex" value="男" id="male" required/><label for="male">男</label>
+	<input type="radio" name="sex" value="女" id="female" required/><label for="female">女</label>
+	<input type="radio" name="sex" value="第三性" id="3rd_sex" required/><label for="3rd_sex">第三性</label>
+	</div>
+	<div class="well">
+	<p class="alert alert-warning" style="font-size: 20px;">您的年齡是</p>
+	<input type="radio" name="age" value="18歲以下" id="under18" required/><label for="under18">18歲以下</label>
+	<input type="radio" name="age" value="19~29歲" id="19to29"required/><label for="19to29">19~29歲</label>
+	<input type="radio" name="age" value="30~39歲" id="30to39" required/><label for="30to39">30~39歲</label>
+	<input type="radio" name="age" value="40~49歲" id="40to49" required/><label for="40to49">40~49歲</label>
+	<input type="radio" name="age" value="50~65歲" id="50to65" required/><label for="50to65">50~65歲</label>
+	<input type="radio" name="age" value="65歲以上" id="65up" required/><label for="65up">65歲以上</label>
+	</div>
+	<div class="well">
+	<p class="alert alert-success" style="font-size: 20px;">您的職業是</p>
+	<input type="radio" name="job" value="學生" id="student" required/><label for="student">學生</label>
+	<input type="radio" name="job" value="資訊業" id="IT" required/><label for="IT">資訊業</label>
+	<input type="radio" name="job" value="服務業" id="service" required/><label for="service">服務業</label>
+	<input type="radio" name="job" value="製造業" id="manufacture"required/><label for="manufacture">製造業</label>
+	<input type="radio" name="job" value="軍公教" id="public_servant"required/><label for="public_servant">軍公教</label>
+	<input type="radio" name="job" value="農工漁牧" id="farmer" required/><label for="farmer">農工漁牧</label>
+	<input type="radio" name="job" value="百貨零售業" id="sale" required/><label for="sale">百貨零售業</label>
+	<input type="radio" name="job" value="金融保險業" id="finance" required/><label for="finance">金融保險業</label>
+	<input type="radio" name="job" value="觀光旅遊業" id="tour" required/><label for="tour">觀光旅遊業</label>
+	<input type="radio" name="job" value="其他" id="job_other"required/><label for="job_other">其他</label>
+	</div>
+	<div class="well">
+	<p class="alert alert-warning" style="font-size: 20px;">您的學歷是</p>
+	<input type="radio" name="education" value="國小以下(含)" id="under_primary" required/><label for="under_primary">國小以下(含)</label>
+	<input type="radio" name="education" value="國中" id="junior" required/><label for="junior">國中</label>
+	<input type="radio" name="education" value="高中職" id="senior" required/><label for="senior">高中職</label>
+	<input type="radio" name="education" value="大學專科" id="college" required/><label for="college">大學專科</label>
+	<input type="radio" name="education" value="碩士" id="master" required/><label for="master">碩士</label>
+	<input type="radio" name="education" value="博士" id="PhD" required/><label for="PhD">博士</label>
+	</div>
+	<div class="well">
+	<p class="alert alert-success" style="font-size: 20px;">您的居住地是</p>
+	<input type="radio" name="area" value="北部地區" id="north" required/><label for="north">北部地區</label>
+	<input type="radio" name="area" value="中部地區" id="middle" required/><label for="middle">中部地區</label>
+	<input type="radio" name="area" value="南部地區" id="south" required/><label for="south">南部地區</label>
+	<input type="radio" name="area" value="東部地區" id="east" required/><label for="east">東部地區</label>
+	<input type="radio" name="area" value="離島地區" id="island" required/><label for="island">離島地區</label>
+	<input type="radio" name="area" value="國外" id="foreign" required/><label for="foreign">國外</label>
+	</div>
+	<div class="well">
+	<p class="alert alert-warning" style="font-size: 20px;">您的婚姻狀況是</p>
+	<input type="radio" name="married" value="已婚" id="married" required/><label for="married">已婚</label>
+	<input type="radio" name="married" value="未婚" id="single" required/><label for="single">未婚</label>
+	</div>
+	<div class="well">
+	<p class="alert alert-success" style="font-size: 20px;">您的年收入是</p>
+	<input type="radio" name="income" value="40萬元以內" id="under40wan" required/><label for="under40wan">40萬元以內
+	<input type="radio" name="income" value="41~60萬元" id="41wanto60wan" required/><label for="41wanto60wan">41~60萬元</label>
+	<input type="radio" name="income" value="61~75萬元" id="61wanto75wan" required/><label for="61wanto75wan">61~75萬元</label>
+	<input type="radio" name="income" value="76~99萬元" id="76wanto99wan" required/><label for="76wanto99wan">76~99萬元</label>
+	<input type="radio" name="income" value="100萬元以上" id="100wanup" required/><label for="100wanup">100萬元以上</label>
+	</div>
+	<div class="well">
+	<p class="alert alert-warning" style="font-size: 20px;">您最常獲取此餐廳資訊的管道</p>
+	<input type="radio" name="datafrom" value="網路" id="internet" required/><label for="internet">網路</label>
+	<input type="radio" name="datafrom" value="電視" id="TV" required/><label for="TV">電視</label>
+	<input type="radio" name="datafrom" value="雜誌/期刊" id="magazine" required/><label for="magazine">雜誌/期刊</label>
+	<input type="radio" name="datafrom" value="親朋好友" id="friend" required/><label for="friend">親朋好友</label>
+	<input type="radio" name="datafrom" value="其他" id="source_other" required/><label for="source_other">其他</label>
+	</div>
+	<div class="well">
+	<p class="alert alert-success" style="font-size: 20px;">您平均一個月在此餐廳消費的次數</p>
+	<input type="radio" name="comecount" value="1~3次" id="1to3times" required/><label for="1to3times">1~3次</label>
+	<input type="radio" name="comecount" value="4~6次" id="4to6times" required/><label for="4to6times">4~6次</label>
+	<input type="radio" name="comecount" value="7~10次" id="7to10times" required/><label for="7to10times">7~10次</label>
+	<input type="radio" name="comecount" value="11~15次" id="11to15times" required/><label for="11to15times">11~15次</label>
+	<input type="radio" name="comecount" value="16~20次" id="16to20times" required/><label for="16to20times">16~20次</label>
+	<input type="radio" name="comecount" value="20次以上" id="20times_up" required/><label for="20times_up">20次以上</label>
+	</div>
+	<div class="well">
+	<p class="alert alert-warning" style="font-size: 20px;">您這次在此餐廳消費的目的</p>
+	<input type="radio" name="purpose" value="家族聚餐" id="fam_gather" required/><label for="fam_gather">家族聚餐</label>
+	<input type="radio" name="purpose" value="工作因素" id="work" required/><label for="work">工作因素</label>
+	<input type="radio" name="purpose" value="朋友聚會" id="friend_gather" required/><label for="friend_gather">朋友聚會</label>
+	<input type="radio" name="purpose" value="同學會" id="class_gather" required/><label for="class_gather">同學會</label>
+	<input type="radio" name="purpose" value="其他" id="purpose_other" required/><label for="purpose_other">其他</label>
+	</div>
+	<div class="well">
+	<p class="alert alert-success" style="font-size: 20px;">您平均在餐廳的消費價格</p>
+	新台幣(NTD)<input type="number" name="consumption" required/>
+	</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<button type="submit" class="btn btn-success" style="width:100%; height: 50px;">送出</button>
+	
+</form>
+<div id="div">
+</div>
+<br/>
+</body>
+</html>

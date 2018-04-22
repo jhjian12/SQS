@@ -1,0 +1,10 @@
+.navbar-inverse {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 1px;
+ 
+  background: linear-gradient(#fff,#FFDF14);/*0AAFF1*/
+  /*background-image: url(../img/barbg.png);*/
+  border: 1px solid transparent;
+  
+}

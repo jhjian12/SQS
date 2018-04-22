@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>game</title>
+<!--
+利用window.setTimeout()或window.setInterval()製造物體行進/移動效果
+利用Math.random()為每一個移動物體設定一個速度值
+按下"比賽開始"按鈕後，競速開始，物體開始移動(由右而左或由左而右)
+按下"比賽結束"按鈕，遊戲停止，所有物體留在原位置-->
+<style type="text/css">
+.car {
+    position: absolute;
+}
+body{
+        background-image: url(background.jpg);
+        background-repeat: no-repeat;
+        background-size: 1700px 800px;
+}
+</style>
+<script type="text/javascript">
+alert("早安阿強 我沒記錯的話這是你的檔案吧xD 實習加油啊^ ^");
+var w=document.documentElement.clientWidth;
+var h=document.documentElement.clientHeight;
+var car1;
+var isStop=false;
+window.onload=function() {
+        document.getElementById("start").onclick=allrun;
+        document.getElementById("stop").onclick=stop;
+    car1=document.getElementById("car1");
+    car2=document.getElementById("car2");
+    car3=document.getElementById("car3");
+    car4=document.getElementById("car4");
+    car5=document.getElementById("car5");
+    //初始位置
+    car1.style.left=(w-100)+"px";
+    car2.style.left=(w-100)+"px";
+    car3.style.left=(w-100)+"px";
+    car4.style.left=(w-100)+"px";
+    car5.style.left=(w-100)+"px";
+    car1.style.top=(0.5*h+260)+"px";
+    car2.style.top=(0.5*h+140)+"px";
+    car3.style.top=(0.5*h+10)+"px";
+    car4.style.top=(0.5*h-90)+"px";
+    car5.style.top=(0.5*h-240)+"px";
+    //隱藏
+    document.getElementById("car1").style.visibility="hidden";
+    document.getElementById("car2").style.visibility="hidden";
+    document.getElementById("car3").style.visibility="hidden";
+    document.getElementById("car4").style.visibility="hidden";
+    document.getElementById("car5").style.visibility="hidden";
+};
+//暫停
+function stop(){
+        isStop=true;
+}
+//開跑
+function run(){
+        var pos=parseInt(car1.style.left);
+        pos-=speed();
+        car1.style.left=pos+"px";
+        if (pos>0&& !isStop) {
+                //window.setTimeout("allrun()",speed());
+        }
+        if(pos<10){
+                stop();
+        }
+}
+function run2(){
+    var pos=parseInt(car2.style.left);
+        pos-=speed();
+        car2.style.left=pos+"px";
+        if (pos>0&& !isStop) {
+                //window.setTimeout("allrun()",speed());
+        }
+        if(pos<10){
+                stop();
+        }
+}
+function run3(){
+    var pos=parseInt(car3.style.left);
+        pos-=speed();
+        car3.style.left=pos+"px";
+        if (pos>0&& !isStop) {
+                //window.setTimeout("allrun()",speed());
+        }
+        if(pos<10){
+                stop();
+        }
+}
+function run4(){
+    var pos=parseInt(car4.style.left);
+        pos-=speed();
+        car4.style.left=pos+"px";
+        if (pos>0&& !isStop) {
+                //window.setTimeout("allrun()",speed());
+        }
+        if(pos<10){
+                stop();
+        }
+}
+function run5(){
+        var pos=parseInt(car5.style.left);
+        pos-=speed();
+        car5.style.left=pos+"px";
+        if (pos>0&& !isStop) {
+                //window.setTimeout("allrun()",speed());
+        }
+        if(pos<10){
+                stop();
+        }
+}
+function allrun(){
+        run();
+        run2();
+        run3();
+        run4();
+        run5();
+        if(!isStop)
+                window.setTimeout("allrun()",100);
+}
+//隨機給時速
+function speed(){
+        var sec=Math.random()*50;
+        return sec;
+}
+
+//選擇幾台車競速,ex:car=3 ->要三台，亂數給三次
+function cars(){
+        for(var j=1;j<=5;j++){
+                document.getElementById("car"+j).style.visibility="hidden";
+        }
+        var num=document.getElementById('num');
+        var cars=num.options[num.selectedIndex].text;
+        for(var i=0;i<cars;i++){
+        var s= Math.floor(Math.random()*(cars)+1);
+        if(document.getElementById("car"+s).style.visibility=="visible"){
+            i--;
+        }
+                document.getElementById("car"+s).style.visibility="visible";
+        }
+}
+</script>
+</head>
+<body>
+<div id="cont">
+<select id="num" onclick="cars()">
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+</select>
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+<img id="car1" src="car_1.png" class="car"/>
+<img id="car2" src="car_2.png" class="car"/>
+<img id="car3" src="car_3.png" class="car"/>
+<img id="car4" src="car_4.png" class="car"/>
+<img id="car5" src="car_5.png" class="car"/>
+</div>
+</div>
+</body>
+</html>

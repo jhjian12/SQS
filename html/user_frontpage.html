@@ -1,0 +1,58 @@
+<!-- <?php
+	require("userchecklogin.php");
+?> -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SQS</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+<!-- <script src="http://code.jquery.com/jquery-3.2.1.js"></script> -->
+<script src="../javascript/opendoc.js"></script>
+<script src="../javascript/shop_frontpage.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/admin_frontpage_opendoc.css">
+<link rel="stylesheet" type="text/css" href="background.css">
+<link rel="stylesheet" type="text/css" href="../css/navbar.css">
+<link rel="stylesheet" type="text/css" href="../css/table.css">
+</head>
+<!-- <h3><a href="">管理者登入</a></h3> -->
+<body id="background" background="BG.jpg">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid" >
+    <div class="navbar-header">
+      <a class="navbar-brand" href="user_frontpage.html" id="navbar">服務品質檢核系統</a>
+    </div>
+    <ul class="nav navbar-nav">
+          <li><a href="user_listnotice.html">系統公告</a></li>
+          <!-- <li><a href="user_system_concept.html">系統發想&概念</a></li> -->
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">會員專區<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="shop.php">數據分析</a></li>
+          <li><a href="user_login.php">基本資料</a></li>
+          <li><a href="shop_changelevel.php">升級方案</a></li>
+          <li><a href="pickquestion.php">題庫挑選</a></li>
+          <li><a href="company_shoplist.php">分店管理</a></li>
+        </ul>
+      </li>
+      <li><a href="user_F&Q.html">常見問題</a></li>
+      <li><a href="caselist.html">成功案例</a></li>
+      <li><a href="user_QuestionForm.html">聯絡我們</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li id="logout" style="display: none"><a href="companylogout.php"><span class="glyphicons glyphicons-traveler"></span> Log Out</a></li>
+    </ul>
+  </div>
+</nav>
+<div id="iframe">
+<!--jquery 插入html 位址-->
+</div>
+<button><a href="#navbar"><img src="../img/go-to-the-top.png"></a></button>
+</body>
+</html>

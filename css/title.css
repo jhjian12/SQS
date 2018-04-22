@@ -1,0 +1,14 @@
+.title {
+    border-left: 10px solid #4285F4;
+    border-bottom: 20px;
+    background-color: #DFE3EE;
+    text-shadow: 2px 2px 4px #000000;
+    font-family: 'cwTeXYen', sans-serif;
+}
+.cont {
+    border: 2px solid #FF9900;
+    border-radius: 5px;
+}
+body{
+	font-family: 'cwTeXYen', sans-serif;
+}

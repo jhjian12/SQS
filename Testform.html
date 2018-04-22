@@ -1,0 +1,32 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" ; charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="js/Question.js"></script>
+</head>
+<body>
+<form id="question" method="post">
+        <input type="hidden" name="act" value="addQuestion">
+        問題:
+        <textarea name="item"  id="item" cols="50" rows="5"></textarea> <br>
+        面向:
+        <select name="dimension" id="dimension" />
+                <option value="aa">aa</option>
+                <option value="bb">bb</option>
+                <option value="cc">cc</option>
+                <option value="dd">dd</option>
+                <option value="ee">ee</option>
+        </select><br>
+        題目等級:
+        <select name="level" id="level" />
+                <option value="0">0</option>
+                <option value="1">1</option>
+        </select><br>
+        <button type="submit" name="Submit" >送出</button>
+</form>
+  <button id="showQuestionList">console show</button>
+    <form id="show"></form>
+  <div id="main">1</div>
+</body>
+</html>

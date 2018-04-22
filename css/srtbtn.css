@@ -1,0 +1,73 @@
+.center-wrap {
+	position: relative;
+	top: calc(50% - 100px);
+	left: calc(50% - 125px);
+	width: 250px;
+	height: 200px;
+}
+
+.startbutton {
+	position: relative;
+	bottom:50px;
+	display: block;
+	background: none center center no-repeat;
+	background-size: cover;
+	border: 2px solid #2e2e2e;
+	text-transform: uppercase;
+	letter-spacing: .3rem;
+	padding: 20px 15px;
+	text-align: center;
+	max-width: 270px;
+	min-width: 200px;
+	cursor: pointer;
+	overflow: hidden;
+	-webkit-transition: border 1s cubic-bezier(0.19,1,.22,1),color .6s cubic-bezier(0.19,1,.22,1);
+	transition: border 1s cubic-bezier(0.19,1,.22,1), color .6s cubic-bezier(0.19,1,.22,1), background 5s cubic-bezier(0.19,1,.22,1);
+}
+
+.startbutton a {
+	color: #969696;
+	font-family: 'Varela Round';
+	text-decoration: none;
+}
+
+.startbutton .mask {
+	background: #000;
+	background: rgba(255,255,255,0.5);
+}
+
+.startbutton .mask {
+	position: absolute;
+	display: block;
+	width: 200px;
+	height: 100px;
+	-webkit-transform: translate3d(-120%,-50px,0) rotate3d(0,0,1,45deg);
+	transform: translate3d(-120%,-50px,0) rotate3d(0,0,1,45deg);
+	-webkit-transition: all 1.1s cubic-bezier(0.19,1,.22,1);
+	transition: all 1.1s cubic-bezier(0.19,1,.22,1);
+}
+
+.startbutton .shift {
+	-webkit-transition: all 1.1s cubic-bezier(0.19,1,.22,1);
+	transition: all 1.1s cubic-bezier(0.19,1,.22,1);
+}
+
+.startbutton:hover {
+	border-color: #000000;
+	 box-shadow: 0 0 5px rgba(255,245,245,0.8); 
+	 /*background-image: url(exit.png); */
+}
+
+.startbutton:hover a {
+	color: #000000;
+}
+
+.startbutton:hover .mask {
+	background: #000000;
+	-webkit-transform: translate3d(120%,-100px,0) rotate3d(0,0,1,90deg);
+	transform: translate3d(120%,-100px,0) rotate3d(0,0,1,90deg);
+}
+
+.startbutton:hover .shift {
+	padding-left: 5px;
+}

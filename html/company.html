@@ -1,0 +1,171 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" ; charset="utf-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+    <script type="text/javascript" src="../javascript/companyChart.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/button.css">
+</head>
+<body>
+<table class="mmuser">
+<col class="sa" />
+<tr>
+    <td id="sidebar">
+        <ul class="list-group">
+            <li>
+                <button id="draw4_button" style="width:250px;"><img src="../img/bar.png" ><br/>分店間特定屬性顧客比較<a href="#" id="link4" data-toggle="tooltip" 
+                title="此圖表將會為您呈現:
+                各間分店的不同客群之數量比較，例如:各個分店間的職業類別之數量比較。
+                若還有相關疑問，請至'聯絡我們'填寫您的疑問，SQS小組將盡速為您解答，謝謝您的賜教。" 
+                style='display:none;'> <img src="../img/question.png" ></a></button>
+            </li>
+            <li>
+                <button id="draw8_button" style="width:250px;"><img src="../img/bar.png" ><br/>分店間問項與基本資料的人數比例<a href="#" id="link8" data-toggle="tooltip" 
+                title="此圖表將會為您呈現:
+                針對某一問項，不同客群對於分店的期望分數與感知分數之比較，例如:不同地區之客群對於各分店的期望與感知分數的比較。
+                若還有相關疑問，請至'聯絡我們'填寫您的疑問，SQS小組將盡速為您解答，謝謝您的賜教。" 
+                style='display:none;'> <img src="../img/question.png" ></a></button>
+            </li>
+            <li>
+                <button id="draw5_button" style="width:250px;"><img src="../img/pie.png" ><br/>分店間來客人數<a href="#" id="link5" data-toggle="tooltip" 
+                title="此圖表將會為您呈現:
+                一段時間內，各分店的所有來客比例與數量，也可以點選圖中某分店區塊，進入詳看各個客群的組成，例如:在整個期間，顯示各分店的所有來客數量，點選圖中一個分店，可以詳看性別分類的客群，再按下'男'區塊，即可詳看男生族群中，各個職業的比例與數量。
+                若還有相關疑問，請至'聯絡我們'填寫您的疑問，SQS小組將盡速為您解答，謝謝您的賜教。" 
+                style='display:none;'> <img src="../img/question.png" ></a></button>
+            </li>
+            <li>
+                <button id="draw6_button" style="width:250px;"><img src="../img/line.png" ><br/>分店間構面分數比較<a href="#" id="link6" data-toggle="tooltip" 
+                title="此圖表將會為您呈現:
+                所有題目分成五大方向，分別為有形性、回應性、確實性、關懷性與可靠性，下列為各個分店在這五大類的期望與感知之平均分數，提供您各個分店可能需要改善的方向。
+                有形性(Tangibles):係指實際的設備、人員的儀表能與所提供的服務相互配合。
+                回應性(Responsiveness):係指願意協助顧客且迅速提供服務之意願。
+                確實性(Assurance):係指員工的知識、禮貌與能力是值得信賴的。
+                關懷性(Empathy):係指公司關心並注意每一位顧客的需要，提供顧客個人化關心之能力。
+                可靠性(Reliability):係指能正確地與精確地執行允諾顧客的服務之能力。
+                若還有相關疑問，請至'聯絡我們'填寫您的疑問，SQS小組將盡速為您解答，謝謝您的賜教。" 
+                style='display:none;'> <img src="../img/question.png" ></a></button>
+            </li>
+            <li>
+                <button id="draw7_button" style="width:250px;"><img src="../img/line.png" ><br/>分店間問項分數比較<a href="#" id="link7" data-toggle="tooltip" 
+                title="此圖表將會為您呈現:
+                各個分店所有問項的期望與感知平均分數，提供您各個分店可能需要改進的方向。
+                若還有相關疑問，請至'聯絡我們'填寫您的疑問，SQS小組將盡速為您解答，謝謝您的賜教。" 
+                style='display:none;'> <img src="../img/question.png" ></a></button>
+            </li>
+        </ul>
+    </td>
+    <td id="cmmin">
+        <div id="chart">
+            <h2 id='test'></h2>
+            <div id="draw4" style='display:none;'>
+            <!--圖四-各分店間某年的特定屬性顧客比較-直條圖-->
+            <form id = "form4" name = "form4">
+                <select id="year" name="year" onchange="makechart()"></select>
+                <select id="type" name="type" onchange="makechart()">
+                    <option value='job'>職業</option>
+                    <option value='sex'>性別</option>
+                    <option value='age'>年齡</option>
+                    <option value='area'>地區</option>
+                    <option value='married'>婚姻</option>
+                    <option value='datafrom'>資料來源</option>
+                    <option value='comecount'>來店次數</option>
+                    <option value='income'>年收入</option>
+                </select>
+            </form>
+            <br/><br/>
+            <div id="container4"></div>
+            </div>
+            <div id="draw5" style='display:none;'>
+            <!--圖五-各分店間來客人數(兩種基本資料比較)-圓餅圖-->
+            <div id="div">
+            <form id="form5" name="form5">
+                <select id="select_year" name="select_year" onchange="show()">
+                <option id="year0" name="year" value="">歷史資料(年)</option>
+                </select>
+                <select id="select_month" name="select_month" onchange="show()">
+                    <option id="month_0" name="month" value="">歷史資料(月)</option>
+                    <option id="month_1" name="month" value="1">1月</option>
+                    <option id="month_2" name="month" value="2">2月</option>
+                    <option id="month_3" name="month" value="3">3月</option>
+                    <option id="month_4" name="month" value="4">4月</option>
+                    <option id="month_5" name="month" value="5">5月</option>
+                    <option id="month_6" name="month" value="6">6月</option>
+                    <option id="month_7" name="month" value="7">7月</option>
+                    <option id="month_8" name="month" value="8">8月</option>
+                    <option id="month_9" name="month" value="9">9月</option>
+                    <option id="month_10" name="month" value="10">10月</option>
+                    <option id="month_11" name="month" value="11">11月</option>
+                    <option id="month_12" name="month" value="12">12月</option>
+                </select>
+                <select id="select_type" name="select_type" onchange="show()">
+                    <option id="select_1" name="select" value="sex" selected>性別</option>
+                    <option id="select_2" name="select" value="job">職業</option>
+                    <option id="select_3" name="select" value="age">年齡</option>
+                    <option id="select_4" name="select" value="area">居住地</option>
+                    <option id="select_5" name="select" value="married">婚姻狀態</option>
+                    <option id="select_6" name="select" value="income">年收入狀況</option>
+                    <option id="select_7" name="select" value="comecount">平均消費次數</option>
+                    <option id="select_8" name="select" value="datafrom">獲取餐廳資訊來源</option>
+                </select>
+                <select id="select_secondtype" name="select_secondtype" onchange="show()">
+                    <option id="select_1" name="select_second" value="sex">性別</option>
+                    <option id="select_2" name="select_second" value="job" selected>職業</option>
+                    <option id="select_3" name="select_second" value="age">年齡</option>
+                    <option id="select_4" name="select_second" value="area">居住地</option>
+                    <option id="select_5" name="select_second" value="married">婚姻狀態</option>
+                    <option id="select_6" name="select_second" value="income">年收入狀況</option>
+                    <option id="select_7" name="select_second" value="comecount">平均消費次數</option>
+                    <option id="select_8" name="select_second" value="datafrom">獲取餐廳資訊來源</option>
+                </select>
+            </form>
+            </div>
+            <br/><br/>
+            <div id="container5"></div>
+            </div>
+            <div id="draw6" style='display:none;'>
+            <!--圖六-各分店間構面分數比較-折線圖-->
+            <form id="sel_date" name="sel_date">
+                <select id="year6" name="year6" onchange="data_draw6()"></select>
+                <select id="month6" name="month6" onchange="data_draw6()"></select>
+                <select id="exp_real6" name="exp_real6" onchange="data_draw6()"></select>
+            </form>
+            <br/><br/>
+            <div id="container6"></div>
+            </div>
+            <div id="draw7" style='display:none;'>
+            <!--圖七-各分店間問項分數比較-折線圖-->
+            <form name="form7">
+                <select id="year7" name="year7" onchange="data_draw7()"></select>
+                <select id="month7" name="month7" onchange="data_draw7()"></select>
+                <select id="exp_real7" name="exp_real7" onchange="data_draw7()"></select>
+            </form>
+            <br/><br/>
+            <div id="container7"></div>
+            </div>
+            <div id="draw8" style='display:none;'>
+            <!--圖八-各分店間，特定問項與基本資料的人數比例-直條圖-->
+            <form id = "form8" name = "form8">
+                <select id="select2" name="select2" onchange="testsel()">
+                </select>
+                <select id="select" name="select" onchange="testsel()">
+                    <option value="area" id="-1" >地區</option>
+                    <option value="sex" id="1">性別</option>
+                    <option value="job" id="2">職業</option>
+                    <option value="married" id="3">婚姻</option>
+                    <option value="income" id="4">年收入</option>
+                    <option value="education" id="5">學歷</option>
+                </select>
+            </form>
+            <br/><br/>
+            <div id="container8"></div>
+            </div>
+        </div>
+    </td>
+</tr>
+</table>
+</body>
+
+</body>
+</html>
